@@ -14,7 +14,7 @@ $(document).ready(function() {
   });
   $("#text_bar").keypress(function(e) {
     if (e.which == 13) {
-      
+      $("#container").css("margin-top", "20px");
     }
   });
 });
