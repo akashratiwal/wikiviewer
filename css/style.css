@@ -22,7 +22,7 @@ body {
 #Random {
   font-size: 20px;
   padding: 10px;
-  height: 60px;
+  height: 55px;
   margin: 20px;
 }
 
@@ -74,4 +74,34 @@ body {
   background: white;
   color: #000;
   opacity: 1;
+}
+
+#result_container {
+  margin-top: 20px;
+  display: block;
+}
+
+.result_items {
+  display: block;
+  width: 60%;
+  margin-left: 20%;
+  float: clear;
+  background: #eee;
+  margin-bottom: 20px;
+  padding: 20px 15px 20px 15px;
+}
+
+.result_items:hover {
+  box-shadow: 6px 6px 0px #FF9900;
+  transition: .3s;
+}
+
+.title {
+  font-weight: 800;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+a, a:hover, a:visited {
+  text-decoration:none;
+  color: inherit;
 }
