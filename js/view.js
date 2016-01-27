@@ -22,12 +22,16 @@ $(document).ready(function() {
         url: 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=' + $("#text_bar").val(),
         dataType: 'jsonp',
         success: function (val) {
-          $("#result_container").html("");
-          for (var i in val.query.pages) {
-            $("#result_container").append("<a href='" + "https://en.wikipedia.org/?curid=" + val.query.pages[i].pageid + "' target='_blank'><div class='result_items'><span class='title'>" + val.query.pages[i].title +
-            "</span><br><br><span class='extract'>" + val.query.pages[i].extract + "</span></div></a>");
+          if (!val.query) {
+              alert("Try again with different keyword...");
+          } else {
+            $("#result_container").html("");
+            for (var i in val.query.pages) {
+              $("#result_container").append("<a href='" + "https://en.wikipedia.org/?curid=" + val.query.pages[i].pageid + "' target='_blank'><div class='result_items'><span class='title'>" + val.query.pages[i].title +
+              "</span><br><br><span class='extract'>" + val.query.pages[i].extract + "</span></div></a>");
+            }
+            $("#result_container").show({"duration": "300"});
           }
-          $("#result_container").show({"duration": "300"});
       }
       });
     }
